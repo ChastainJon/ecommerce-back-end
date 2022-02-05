@@ -50,10 +50,7 @@ router.get('/:id', (req, res) => {
     }
     res.json(dbCatData)
   })
-  .catch(err =>{
-    console.log(err)
-    res.status(500).json(err)
-  })
+  .catch(err => res.status(500).json(err))
 });
 
 router.post('/', (req, res) => {
@@ -62,10 +59,7 @@ router.post('/', (req, res) => {
     category_name: req.body.category_name
   })
   .then(dbCatData => res.json(dbCatData))
-  .catch(err =>{
-    console.log(err)
-    res.status(400).json(err)
-  })
+  .catch(err => res.status(400).json(err))
 });
 
 router.put('/:id', (req, res) => {
@@ -83,10 +77,7 @@ router.put('/:id', (req, res) => {
     }
     res.json(dbCatData)
   })
-  .catch(err =>{
-    console.log(err)
-    res.status(500).json(err)
-  })
+  .catch(err => res.status(400).json(err))
 });
 
 router.delete('/:id', (req, res) => {
@@ -103,10 +94,7 @@ router.delete('/:id', (req, res) => {
     }
     res.json(dbCatData)
   })
-  .catch(err =>{
-    console.log(err)
-    res.status(500).json(err)
-  })
+  .catch(err => res.status(500).json(err))
 });
 
 module.exports = router;
